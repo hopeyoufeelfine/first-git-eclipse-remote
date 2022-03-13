@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class ClassCondition implements Condition {
     /**
-     * @param context   上下文对象，用于获取环境，IOC容器，ClassLoader对象
-     * @param metadata  注解元对象，可以用于获取注解定义的属性值
+     * @param context  上下文对象，用于获取环境，IOC容器，ClassLoader对象
+     * @param metadata 注解元对象，可以用于获取注解定义的属性值
      * @return
      */
     @Override
@@ -28,7 +28,7 @@ public class ClassCondition implements Condition {
         //获取注解属性值 value
         Map<String, Object> map = metadata.getAnnotationAttributes(ConditionOnClass.class.getName());
         //System.out.println(map);
-        String[] value = (String[])map.get("value");
+        String[] value = (String[]) map.get("value");
         boolean flag = true;
         try {
             for (String className : value) {
